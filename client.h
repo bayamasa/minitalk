@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.h                                           :+:      :+:    :+:   */
+/*   client.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 17:18:18 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/14 17:18:19 by mhirabay         ###   ########.fr       */
+/*   Created: 2021/10/14 17:18:14 by mhirabay          #+#    #+#             */
+/*   Updated: 2021/10/14 17:18:15 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_H
-# define SERVER_H
+#ifndef CLIENT_H
+# define CLIENT_H
 
 # include <signal.h>
 # include <unistd.h>
