@@ -9,6 +9,7 @@
 # include <stdio.h>
 # include <errno.h>
 # include <libc.h>
-# include "lib/libft.h"
+# include "lib/libft/libft.h"
+# include "lib/ft_printf/ft_printf.h"
 
 #endif
