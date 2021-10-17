@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/14 19:06:43 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/15 16:54:02 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	main(int argc, char const *argv[])
 	}
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
-
 	// もし0だったらuser1に、もし1だったらuser2に送信する
 	while (*str == '\0')
 	{

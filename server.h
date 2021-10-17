@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:18:18 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/14 17:18:19 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/15 21:31:17 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,11 @@
 # include "lib/libft/libft.h"
 # include "lib/ft_printf/ft_printf.h"
 
+typedef struct s_sigattr
+{
+	int			count;
+	char		bit;
+}				t_sigattr;
+
+t_sigattr	g_sigattr = {0, 0};
 #endif
