@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:19:08 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/15 22:30:54 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/18 22:42:38 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int sig_handler()
 	return (1);
 }
 
-void sigfunc(int sig, siginfo_t *info, void *ucontext)
+static void sigfunc(int sig, siginfo_t *info, void *ucontext)
 {
 	if (sig == SIGUSR1)
 	{
@@ -33,7 +33,7 @@ void sigfunc(int sig, siginfo_t *info, void *ucontext)
 	}
 	if (g_sigattr.count == 8)
 	{
-		write(1, g_sigattr.bit, 1);
+		write(1, &g_sigattr.bit, 1);
 		g_sigattr.count = 0;
 	}
 }
@@ -47,8 +47,8 @@ int main()
 	pid = getpid();
 	printf("pid = %d\n", pid);
 	memset(&act, 0, sizeof(act));
-	act.sa_handler = sigfunc;
 	act.sa_flags = SA_SIGINFO;
+	act.sa_sigaction = sigfunc;
 	rc = sigaction(SIGUSR1, &act, NULL);
 	if (rc < 0)
 	{
