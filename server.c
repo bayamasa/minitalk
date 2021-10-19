@@ -6,9 +6,11 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:19:08 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/18 22:42:38 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:57:28 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#define MYDEBUG() printf("\x1b[46m%s[%d] %s\x1b[49m\n", __FILE__, __LINE__, __func__);
 
 #include "server.h"
 
@@ -18,7 +20,7 @@ int sig_handler()
 	return (1);
 }
 
-static void sigfunc(int sig, siginfo_t *info, void *ucontext)
+static void	sigfunc(int sig, siginfo_t *info, void *ucontext)
 {
 	if (sig == SIGUSR1)
 	{
@@ -31,6 +33,7 @@ static void sigfunc(int sig, siginfo_t *info, void *ucontext)
 		g_sigattr.bit |= 1;
 		g_sigattr.count += 1;
 	}
+	printf("count = %d\n", g_sigattr.count);
 	if (g_sigattr.count == 8)
 	{
 		write(1, &g_sigattr.bit, 1);
@@ -38,7 +41,7 @@ static void sigfunc(int sig, siginfo_t *info, void *ucontext)
 	}
 }
 
-int main()
+int	main(void)
 {
 	pid_t				pid;
 	struct sigaction	act;
@@ -64,6 +67,6 @@ int main()
 	while (1)
 	{
 		printf("I'm working...\n");
-		sleep(1);
+		sleep(10);
 	}
 }
