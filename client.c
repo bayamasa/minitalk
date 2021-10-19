@@ -6,23 +6,23 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/15 16:54:02 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/19 17:25:01 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "server.h"
+#include "client.h"
 
 int	main(int argc, char const *argv[])
 {
-	pid_t	pid;
-	char	*str;
-	int		byte;
-	int		i;
-	int		bit;
+	pid_t		pid;
+	const char	*str;
+	int			byte;
+	int			i;
+	int			bit;
 
-	if (argc != 2)
+	if (argc != 3)
 	{
-		ft_printf("args error. args must be 2");
+		ft_printf("args error. args must be 3");
 		exit(1);
 	}
 	if (argv[1] == NULL)
@@ -33,22 +33,27 @@ int	main(int argc, char const *argv[])
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
 	// もし0だったらuser1に、もし1だったらuser2に送信する
-	while (*str == '\0')
+	while (*str != '\0')
 	{
-		byte = *str;
+		byte = (int)*str;
 		i = 0;
 		while (i < 8)
 		{
-			bit = byte & 0;
+			bit = byte & MSB;
+			printf("bit = %d\n", bit);
 			if (bit == 0)
 				kill(pid, SIGUSR1);
 			else if (bit == 1)
 				kill(pid, SIGUSR2);
+			// 上から順番に送らないとシフト演算できない。
 			// bitはcharのbit数1byteしかもっていないので、
 			// 8回分、bit計算をすればよい
 			// bit shiftを8回行う。
-			byte >>= 1;
+			byte <<= 1;
+			i++;
+			usleep(600);
 		}
+		str++;
 	}
 	return (0);
 }
