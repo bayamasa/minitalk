@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:18:18 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/18 22:34:59 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:59:15 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 
 typedef struct s_sigattr
 {
-	int			count;
-	char		bit;
+	int				count;
+	unsigned char	bit;
 }				t_sigattr;
 
 t_sigattr	g_sigattr = {0, 0};

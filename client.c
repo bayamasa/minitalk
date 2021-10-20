@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/19 17:25:01 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/20 16:09:39 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ int	main(int argc, char const *argv[])
 	{
 		byte = (int)*str;
 		i = 0;
-		while (i < 8)
+		while (i < 7)
 		{
 			bit = byte & MSB;
 			printf("bit = %d\n", bit);
-			if (bit == 0)
+			if (bit != MSB)
 				kill(pid, SIGUSR1);
-			else if (bit == 1)
+			else if (bit == MSB)
 				kill(pid, SIGUSR2);
 			// 上から順番に送らないとシフト演算できない。
 			// bitはcharのbit数1byteしかもっていないので、

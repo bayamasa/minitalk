@@ -5,13 +5,14 @@
 
 int	main()
 {
-	int count = 7;
+	int count = 6;
 	char a = 0;
+	int bit = 1;
 	for (size_t i = 0; i < count; i++)
 	{
+		a |= bit;
 		a <<= 1;
 	}
-	a <<= 0;
 	printf("a = %d\n", a);
 	
 	return (0);
