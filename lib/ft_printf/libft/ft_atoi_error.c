@@ -1,6 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
+/*   ft_atoi_error.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/20 16:58:23 by mhirabay          #+#    #+#             */
+/*   Updated: 2021/10/20 17:30:55 by mhirabay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
@@ -20,17 +32,11 @@ static int	ft_isspace(char a)
 	return (0);
 }
 
-#include <stdio.h>
-
-static long	process_flow(int sign)
+ssize_t	ft_atoi_err(const char *str)
 {
-	printf("KIta");
-	if (sign == -1)
-	{
-		return (LONG_MIN);
-	}
-	return (LONG_MAX);
+	
 }
+
 
 int	ft_atoi(const char *str)
 {
@@ -69,3 +75,4 @@ int main()
 	char *a = "22474836490";
 	printf("ft_atoi(return) = %d\n", ft_atoi(a));
 }
+

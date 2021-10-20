@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:33:36 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/18 17:33:37 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/20 22:26:51 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct s_errlist
+{	
+	int		no;
+	int		err_no;
+	char	*err_msg;
+}	t_errlist;
 
 # define STR_BUFF_SIZE 1000000
 
