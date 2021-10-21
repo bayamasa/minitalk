@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:19:08 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/21 07:38:31 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/21 17:15:21 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,18 @@ int	main(void)
 	int					rc;
 
 	pid = getpid();
-	printf("pid = %d\n", pid);
-	memset(&act, 0, sizeof(act));
+	ft_printf("pid = %d\n", pid);
+	ft_memset(&act, 0, sizeof(act));
 	act.sa_flags = SA_SIGINFO;
 	act.sa_sigaction = sigfunc;
-	rc = sigaction(SIGUSR1, &act, NULL);
-	if (rc < 0)
+	if (sigaction(SIGUSR1, &act, NULL) != 0)
 	{
-		printf("Error: sigaction() %s\n", "test");
+		ft_perror(SIGACTION_SIGUSR1_ERR);
 		exit(1);
 	}
-	rc = sigaction(SIGUSR2, &act, NULL);
-	if (rc < 0)
+	if (sigaction(SIGUSR2, &act, NULL) != 0)
 	{
-		printf("Error: sigaction() %s\n", "test");
+		ft_perror(SIGACTION_SIGUSR2_ERR);
 		exit(1);
 	}
 	while (1)

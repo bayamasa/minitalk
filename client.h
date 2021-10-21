@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:18:14 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/21 07:36:45 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/21 16:58:53 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,17 @@
 # define DARWIN_PID_MIN 100
 # define DARWIN_PID_MAX 99999
 # define INVALID_ARG_COUNT "Args error. Args counts must be just 3\n"
-# define NULL_SENDING_MSG "Sending message is null. Need at least one char\n"
-# define NOT_DIGIT_PID "Pid is invalid. Args 1 must be only digit\n"
+# define NOT_DIGIT_PID "Pid is invalid. Pid must be only digit\n"
 # define INVALID_DARWIN_PID "Darwin pid in range 100 <= pid < 99999\n"
+# define SIGACTION_SIGUSR1_ERR "Sigaction error by receiving SIGUSR1\n"
 
 # include <signal.h>
 # include <unistd.h>
 # include <sys/types.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <errno.h>
-# include <libc.h>
 # include "lib/ft_printf/ft_printf.h"
 
-int	ft_client_perror(char *errmsg);
+int	ft_perror(char *errmsg);
 
 #endif
