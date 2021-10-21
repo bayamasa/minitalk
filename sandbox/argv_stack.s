@@ -10,11 +10,16 @@ _main:                                  ## @main
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	xorl	%eax, %eax
-	; int size分 スタックを取る
+	subq	$16, %rsp
 	movl	%edi, -4(%rbp)
-	; ポインタ分 sizeを取る
 	movq	%rsi, -16(%rbp)
+	movq	-16(%rbp), %rax
+	movq	8(%rax), %rsi
+	movl	$1, %edi
+	movl	$1, %edx
+	callq	_write
+	xorl	%eax, %eax
+	addq	$16, %rsp
 	popq	%rbp
 	retq
 	.cfi_endproc

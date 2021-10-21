@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 int main(int argc, char const *argv[])
 {
@@ -7,4 +8,6 @@ int main(int argc, char const *argv[])
 	// movl	%edi, -4(%rbp)
 	// ; ポインタ分 sizeを取る
 	// movq	%rsi, -16(%rbp)
+
+	write(1, argv[1], 1);
 }
