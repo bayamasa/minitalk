@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:29:40 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/20 17:25:22 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:24:53 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,10 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		// numに10かけて割ったものがnumとイコールじゃない場合LONGMAXのオーバーフローとなる。
-		// なぜINT_MAX +1 みたいなやつかここにはいってこないのか
-		// numがlongだから
 		if ((num * 10 + (str[i] - '0')) / 10 != num)
 			return ((int)process_flow(sign));
 		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
 	return ((int)(num * sign));
-}
-
-int main()
-{
-	char *a = "22474836490";
-	printf("ft_atoi(return) = %d\n", ft_atoi(a));
 }
