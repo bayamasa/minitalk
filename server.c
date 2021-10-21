@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:19:08 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/20 23:07:18 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/21 07:38:31 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 static void	sigfunc(int sig, siginfo_t *info, void *ucontext)
 {
 	g_sigattr.count += 1;
-	if (sig == SIGUSR1 && g_sigattr.count <= 6)
+	if (sig == SIGUSR1 && g_sigattr.count <= 7)
 	{
 		g_sigattr.bit <<= 1;
 	}
-	else if (sig == SIGUSR2 && g_sigattr.count <= 6)
+	else if (sig == SIGUSR2 && g_sigattr.count <= 7)
 	{
 		g_sigattr.bit |= 1;
 		g_sigattr.bit <<= 1;
 	}
-	if (g_sigattr.count == 7)
+	if (g_sigattr.count == 8)
 	{
 		if (sig == SIGUSR2)
 			g_sigattr.bit |= 1;

@@ -6,14 +6,14 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:18:14 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/20 22:50:20 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/21 07:36:45 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLIENT_H
 # define CLIENT_H
 
-# define MSB 64
+# define MSB 128
 # define DARWIN_PID_MIN 100
 # define DARWIN_PID_MAX 99999
 # define INVALID_ARG_COUNT "Args error. Args counts must be just 3\n"

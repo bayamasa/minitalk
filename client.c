@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/20 23:14:41 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/21 07:36:35 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	send_msg(unsigned char byte, pid_t pid)
 	int				i;
 
 	i = 0;
-	while (i < 7)
+	while (i < 8)
 	{
 		bit = byte & MSB;
 		if (bit != MSB)
@@ -57,6 +57,9 @@ void	send_msg(unsigned char byte, pid_t pid)
 int	main(int argc, char const *argv[])
 {
 	pid_t		pid;
+	// 20万文字送られてもいいようにheapにとっておいた方がいいかも
+	// でもargvがスタックに保存されているからどっちみちだめかも
+	// ためしてみる必要あり
 	const char	*str;
 	int			i;
 

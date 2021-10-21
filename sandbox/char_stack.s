@@ -24,6 +24,6 @@ _main:                                  ## @main
                                         ## -- End function
 	.section	__TEXT,__cstring,cstring_literals
 L_.str:                                 ## @.str
-	.asciz	"c = %c\n"
+	.asciz	"c = %p\n"
 
 .subsections_via_symbols

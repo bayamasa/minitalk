@@ -5,7 +5,6 @@
 
 int	main()
 {
-	long long a = 126;
-	printf("c = %p\n", (void *)a);
+	write(1, "あ", 3);
 	return (0);
 }
