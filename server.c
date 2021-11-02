@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:19:08 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/21 17:15:21 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/25 16:38:35 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	sigfunc(int sig, siginfo_t *info, void *ucontext)
 {
+	(void)info;
+	(void)ucontext;
 	g_sigattr.count += 1;
 	if (sig == SIGUSR1 && g_sigattr.count <= 7)
 	{
@@ -38,7 +40,6 @@ int	main(void)
 {
 	pid_t				pid;
 	struct sigaction	act;
-	int					rc;
 
 	pid = getpid();
 	ft_printf("pid = %d\n", pid);

@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/21 18:16:53 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/10/25 17:07:32 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	send_msg(unsigned char byte, pid_t pid)
 int	main(int argc, char const *argv[])
 {
 	pid_t				pid;
-	struct sigaction	act;
 	int					i;
 
 	if (check_args(argc, argv, &pid) == -1)

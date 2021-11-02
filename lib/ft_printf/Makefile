@@ -26,9 +26,11 @@ $(NAME): ${OBJS}
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
+		make clean -C libft
 		${RM} ${OBJS}
 
 fclean:	clean
+		make fclean -C libft
 		${RM} ${NAME}
 
 re:		fclean all
