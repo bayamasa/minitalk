@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/12/02 13:08:27 by mhirabay         ###   ########.fr       */
+/*   Updated: 2021/12/02 13:18:29 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "client.h"
+#include "client_bonus.h"
 
 int	check_args(int argc, char const *argv[], pid_t *pid)
 {
