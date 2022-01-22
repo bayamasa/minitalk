@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:33:36 by mhirabay          #+#    #+#             */
-/*   Updated: 2022/01/22 11:55:48 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/22 11:58:40 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_errlist
 
 int			ft_atoi_error(const char *str, int *status);
 long long	ft_strtoll(const char *str, int *status);
-long long	ft_atoi(const char *str, int *status);
+long long	ft_atoi(const char *str);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 int			ft_isalnum(int c);

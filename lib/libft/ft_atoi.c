@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:29:40 by mhirabay          #+#    #+#             */
-/*   Updated: 2022/01/22 11:55:15 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/22 11:57:58 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static long	process_flow(int sign)
 	return (LONG_MAX);
 }
 
-long long	ft_atoi(const char *str, int *status)
+long long	ft_atoi(const char *str)
 {
 	size_t		i;
 	long long	num;
