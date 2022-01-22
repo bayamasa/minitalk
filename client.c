@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2022/01/22 19:54:06 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/22 20:10:34 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(int argc, char const *argv[])
 	{
 		send_msg((unsigned char)argv[2][i], pid);
 		i++;
-		usleep(3000);
+		usleep(2000);
 	}
 	return (0);
 }
