@@ -1,5 +1,7 @@
 a.out
 client
+client_bonus
 server
+server_bonus
 *.o
 *.a
