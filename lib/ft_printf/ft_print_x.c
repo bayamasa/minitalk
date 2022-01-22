@@ -15,9 +15,7 @@
 int	ft_print_x(unsigned int hex)
 {
 	char	*result;
-	int		i;
 
-	i = 0;
 	if (hex == 0)
 		return (ft_put_zero());
 	result = ft_convert_dec_to_hexstr(hex);

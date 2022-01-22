@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:18:18 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/25 19:59:28 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/22 11:47:03 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdlib.h>
 # include <errno.h>
 # include "lib/ft_printf/ft_printf.h"
+# include "lib/libft/libft.h"
 
 typedef struct s_sigattr
 {

@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:18:14 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/12/02 13:17:41 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/22 11:47:11 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "lib/ft_printf/ft_printf.h"
+# include "lib/libft/libft.h"
 
 int	ft_perror(char *errmsg);
 

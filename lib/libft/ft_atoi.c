@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:29:40 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/10/21 15:24:53 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:55:39 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,10 @@ static int	ft_isspace(char a)
 	return (0);
 }
 
-#include <stdio.h>
-
-static long	process_flow(int sign)
-{
-	printf("KIta");
-	if (sign == -1)
-	{
-		return (LONG_MIN);
-	}
-	return (LONG_MAX);
-}
-
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str, int *status)
 {
 	size_t		i;
-	long		num;
+	long long	num;
 	int			sign;
 
 	num = 0;
@@ -46,17 +34,16 @@ int	ft_atoi(const char *str)
 	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			sign = -1;
-		i++;
-	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		if ((num * 10 + (str[i] - '0')) / 10 != num)
-			return ((int)process_flow(sign));
+			*status = false;
 		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
-	return ((int)(num * sign));
+	if (str[i] != '\0')
+		*status = false;
+	return ((num * sign));
 }
