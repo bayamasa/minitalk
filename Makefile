@@ -6,7 +6,7 @@
 #    By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 13:21:26 by mhirabay          #+#    #+#              #
-#    Updated: 2022/01/22 12:08:36 by mhirabay         ###   ########.fr        #
+#    Updated: 2022/01/22 12:10:14 by mhirabay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ SERVER_NAME = server
 CLIENT_NAME = client
 SERVER_BONUS_NAME = server_bonus
 CLIENT_BONUS_NAME = client_bonus
-
 
 SERVER_SRCS = server.c ft_perror.c
 CLIENT_SRCS = client.c ft_perror.c
