@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2022/01/22 12:04:46 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/22 15:03:50 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	send_msg(unsigned char byte, pid_t pid)
 			kill(pid, SIGUSR2);
 		byte <<= 1;
 		i++;
-		usleep(600);
+		usleep(70);
 	}
 }
 
@@ -64,6 +64,7 @@ int	main(int argc, char const *argv[])
 	{
 		send_msg((unsigned char)argv[2][i], pid);
 		i++;
+		usleep(150);
 	}
 	return (0);
 }
