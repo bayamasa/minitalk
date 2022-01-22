@@ -6,7 +6,7 @@
 #    By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 13:21:26 by mhirabay          #+#    #+#              #
-#    Updated: 2022/01/22 11:51:53 by mhirabay         ###   ########.fr        #
+#    Updated: 2022/01/22 12:08:36 by mhirabay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,10 +50,10 @@ $(SERVER_NAME) : $(SERVER_OBJS)
 bonus: ${CLIENT_BONUS_NAME} ${SERVER_BONUS_NAME}
 
 $(CLIENT_BONUS_NAME) : $(CLIENT_BONUS_OBJS)
-	$(CC) $(CFLAGS) $(CLIENT_BONUS_SRCS) -Llib/ft_printf -lftprintf -o $(CLIENT_BONUS_NAME)
+	$(CC) $(CFLAGS) $(CLIENT_BONUS_SRCS) ${LDFLAGS} ${LIBS} -o $(CLIENT_BONUS_NAME)
 
 $(SERVER_BONUS_NAME) : $(SERVER_BONUS_OBJS)
-	$(CC) $(CFLAGS) $(SERVER_BONUS_SRCS) -Llib/ft_printf -lftprintf -o $(SERVER_BONUS_NAME)
+	$(CC) $(CFLAGS) $(SERVER_BONUS_SRCS) ${LDFLAGS} ${LIBS} -o $(SERVER_BONUS_NAME)
 
 clean: 
 	make clean -C lib/ft_printf
