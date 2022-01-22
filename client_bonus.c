@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2021/12/02 13:18:29 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/22 12:05:07 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	send_msg(unsigned char byte, pid_t pid)
 int	main(int argc, char const *argv[])
 {
 	pid_t	pid;
-	int		i;
+	size_t	i;
 
 	if (check_args(argc, argv, &pid) == -1)
 		exit(1);
