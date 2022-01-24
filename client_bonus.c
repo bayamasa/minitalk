@@ -6,7 +6,7 @@
 /*   By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 17:29:12 by mhirabay          #+#    #+#             */
-/*   Updated: 2022/01/22 20:10:41 by mhirabay         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:48:10 by mhirabay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_args(int argc, char const *argv[], pid_t *pid)
 		i++;
 	}
 	*pid = ft_atoi(argv[1]);
-	if (*pid < DARWIN_PID_MIN && *pid >= DARWIN_PID_MAX)
+	if (*pid < DARWIN_PID_MIN || *pid >= DARWIN_PID_MAX)
 		return (ft_perror(INVALID_DARWIN_PID));
 	return (0);
 }
