@@ -6,7 +6,7 @@
 #    By: mhirabay <mhirabay@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 13:21:26 by mhirabay          #+#    #+#              #
-#    Updated: 2022/01/22 12:10:14 by mhirabay         ###   ########.fr        #
+#    Updated: 2022/01/22 20:18:39 by mhirabay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(SERVER_NAME) : $(SERVER_OBJS)
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-bonus: ${CLIENT_BONUS_NAME} ${SERVER_BONUS_NAME}
+bonus: lmake ${CLIENT_BONUS_NAME} ${SERVER_BONUS_NAME}
 
 $(CLIENT_BONUS_NAME) : $(CLIENT_BONUS_OBJS)
 	$(CC) $(CFLAGS) $(CLIENT_BONUS_SRCS) ${LDFLAGS} ${LIBS} -o $(CLIENT_BONUS_NAME)
@@ -65,4 +65,4 @@ fclean: clean
 	${RM} ${SERVER_NAME} ${CLIENT_NAME} ${SERVER_BONUS_NAME} ${CLIENT_BONUS_NAME}
 re:		fclean all
 
-.PHONY: all clean fclean re .c.o 
+.PHONY: all clean fclean re .c.o bonus lmake
